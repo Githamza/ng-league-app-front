@@ -20,6 +20,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "rxjs-compat"
+            ],
             "outputPath": "dist/ng-league",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -28,9 +31,11 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -61,7 +66,9 @@
                   "maximumWarning": "2kb",
                   "maximumError": "4kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json"
             }
           }
         },
@@ -91,9 +98,11 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -127,5 +136,8 @@
       }
     }
   },
-  "defaultProject": "ng-league"
+  "defaultProject": "ng-league",
+  "cli": {
+    "analytics": "da988e8d-207d-4509-8a52-b4968a76780a"
+  }
 }

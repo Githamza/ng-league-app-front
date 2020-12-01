@@ -1,0 +1,8 @@
+<div fxLayout="row wrap" fxLayout.lg="row wrap" fxLayoutAlign="space-between">
+    <div fxFlex.xs="50%" fxFlex.lg="10%" *ngFor='let team of teamsList | async'>
+        <mat-card (click)="showDetails(team)" class="example-card" [ngClass]="card-marging">
+            <img mat-card-image src={{team.thumbnail}} alt="Team logo" [ngStyle]="{'max-height':'200px'}">
+
+        </mat-card>
+    </div>
+</div>

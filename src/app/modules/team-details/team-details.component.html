@@ -1,0 +1,20 @@
+<div>
+    <button (click)="back()" mat-button>Back</button>
+
+
+    <mat-list>
+        <mat-list-item *ngFor='let player of teamDetails | async'>
+            <img matListAvatar src={{player.thumbnail}}>
+            <h3 matLine> {{player.name}} </h3>
+            <p matLine>
+                <span> {{player.position}} </span>
+            </p>
+            <p matLine>
+                <span> {{player.born | date}} </span>
+            </p>
+            <p matLine>
+                <span> {{player.signin.amount | currency: player.signin.currency}} </span>
+            </p>
+        </mat-list-item>
+    </mat-list>
+</div>
